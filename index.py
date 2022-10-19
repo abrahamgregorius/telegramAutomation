@@ -3,6 +3,7 @@ import os
 import main
 import uiautomator2 as u2
 
+# UIAutomator init
 d = u2.connect("R9CT300FQRE")
 
 device_id = "R9CT300FQRE"
@@ -34,6 +35,7 @@ def getVideo():
 def sendVideo(targetnumber):
     getChatroom(targetnumber)
     sleep(2)
+    # The message is for putting the chat to be the most recent chat
     sendMessage("x")
     getVideo()
     
@@ -48,6 +50,7 @@ def getPhoto():
 def sendPhoto(targetnumber):
     getChatroom(targetnumber)
     sleep(2)
+    # The message is for putting the chat to be the most recent chat
     sendMessage("x")
     getPhoto()
 
