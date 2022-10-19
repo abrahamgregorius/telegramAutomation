@@ -1,6 +1,6 @@
 import os
 
-device_id = 'R9CT4007GBM'
+device_id = 'R9CT300FQRE'
 
 
 def pressKey(keycode):
