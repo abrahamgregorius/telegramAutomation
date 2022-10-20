@@ -55,15 +55,21 @@ def sendPhoto(targetnumber):
     getPhoto()
 
 
+
 # def changeAccount():
-#    os.system(f'adb -s '+ device_id +' shell input tap 90 200')
-#    d(className="android.widget.ImageView").click()
+#     os.system(f'adb -s '+ device_id +' shell input tap 90 200')
+#     os.system(f'adb -s '+ device_id +' shell input tap 816 455')
+#    os.system(f'adb -s '+ device_id +' shell ')
+
+# Still figuring out what is the identifier for changing account   
     
+
+
     
         
 # getChatroom("6285811403649")62859141490060
 # sleep(2)
 # sendMessage("Hello world")0858 1140 3517
 
-    
+startApp()
 changeAccount()
