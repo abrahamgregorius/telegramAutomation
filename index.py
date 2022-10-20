@@ -1,7 +1,9 @@
 from time import sleep
+import random
 import os
 import main
 import uiautomator2 as u2
+import appium as app
 
 # UIAutomator init
 d = u2.connect("R9CT300FQRE")
@@ -56,20 +58,35 @@ def sendPhoto(targetnumber):
 
 
 
-# def changeAccount():
-#     os.system(f'adb -s '+ device_id +' shell input tap 90 200')
-#     os.system(f'adb -s '+ device_id +' shell input tap 816 455')
-#    os.system(f'adb -s '+ device_id +' shell ')
+def changeAccount():
+    coordinates = {"a":"400 616", "b":"400 750"}
+    a = random.choice(list(coordinates.values()))
+    os.system(f'adb -s '+ device_id +' shell input tap 90 200')
+    sleep(1)
+    os.system(f'adb -s '+ device_id +' shell input tap '+ a +'')
 
-# Still figuring out what is the identifier for changing account   
+changeAccount()
+
+
+for i in range(12):
+    getChatroom("6281311951704")
+    sleep(1)
+    sendMessage("Hello world!")
+    sleep(1)
+    main.pressKey("BACK")
+    changeAccount()
+    sleep(1)
+
+
+
     
 
-
     
+    
+
+# Still figuring out what is the identifier for changing account
+
         
 # getChatroom("6285811403649")62859141490060
 # sleep(2)
 # sendMessage("Hello world")0858 1140 3517
-
-startApp()
-changeAccount()
