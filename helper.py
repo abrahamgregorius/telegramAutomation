@@ -6,7 +6,7 @@ import random
 
 class TeleHelper:
     device_id = "R9CT300FQRE"
-    numdata = ["85811403649", "895410810679", "895410810680", "895410808876"]
+    numdata = ["81311951704", "85811403517", "85892284244", "895410810690"] 
     d = u2.connect(device_id)
 
     def __init__(self):
@@ -26,7 +26,7 @@ class TeleHelper:
         return number
     
     def getChatroom(self, number):
-        os.system(f'adb -s '+ self.device_id +' shell am start -a android.intent.action.VIEW -d https://t.me/+'+ number +' org.telegram.messenger')
+        os.system(f'adb -s '+ self.device_id +' shell am start -a android.intent.action.VIEW -d https://t.me/+62'+ number +' org.telegram.messenger')
 
     def sendMessage(self, number, message):
         self.getChatroom(number)
@@ -34,8 +34,11 @@ class TeleHelper:
         for i in split:
             if i == " ":
                 self.pressKey("SPACE")
+                sleep(0.3)
             self.pressKey(i)
+            sleep(0.3)
         self.pressSend()
+        sleep(0.3)
 
     def sendPhoto(self, number):
         self.getChatroom(number)
@@ -61,12 +64,17 @@ class TeleHelper:
         sleep(.4)
         os.system(f'adb -s '+ self.device_id +' shell input tap 970 2150')
 
-    def changeAccount(self):
-        coordinates = {"a":"400 616", "b":"400 750"}
-        a = random.choice(list(coordinates.values()))
-        os.system(f'adb -s '+ self.device_id +' shell input tap 90 200')
-        sleep(1)
-        os.system(f'adb -s '+ self.device_id +' shell input tap '+ a +'')
+    def mainFunc(self, number, message):
+        try:
+            helpz.sendMessage(number, "**"+ message)
+        except:
+            print("The number is not a valid number or it is not registered on Telegram")
+        finally:
+            print("The program is shutting down...")
         
-
-helpz = TeleHelper()
+    # def changeAccount(self):
+    #     coordinates = {"a":"400 616", "b":"400 750"}
+    #     a = random.choice(list(coordinates.values()))
+    #     os.system(f'adb -s '+ self.device_id +' shell input tap 90 200')
+    #     sleep(1)
+    #     os.system(f'adb -s '+ self.device_id +' shell input tap '+ a +'')
