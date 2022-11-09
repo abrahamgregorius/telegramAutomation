@@ -95,11 +95,11 @@ class TeleHelper:
         print(b)
 
     def checkCall(self):
-                self.adbs("adb -s "+ self.device_id +" shell uiautomator dump")
-                time.sleep(2)
-                self.adbs("adb -s "+device_id+" pull /storage/self/primary/window_dump.xml")
-                time.sleep(2)
-                pattern = re.compile("(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+")
+        self.adbs("adb -s "+device_id+" shell uiautomator dump")
+        time.sleep(2)
+        self.adbs("adb -s "+device_id+" pull /storage/self/primary/window_dump.xml")
+        time.sleep(2)
+        pattern = re.compile("(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+")
 
 
     def makeCall(self, number):
