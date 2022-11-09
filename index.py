@@ -4,7 +4,7 @@ import os
 import main
 import uiautomator2 as u2
 
-device_id = "R9CT300FQRE"
+device_id = "R9CT4000AAM"
 d = u2.connect(device_id)
 
 packagename = "org.telegram.messenger"
